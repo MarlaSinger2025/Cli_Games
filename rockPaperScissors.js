@@ -14,11 +14,14 @@
 
 // only 'rock', 'paper' , or 'scissors' allowed as input from the player
 
-// process.argv.slice(2);
-
 const playerChoice = process.argv.slice(2)[0];
 // const playerChoice = play[0];
 const computerChoice = 'scissors';
+
+// Console log is showing this error, even when the input is rock, paper, or scissors. But its also showing the right console.log further down...
+if (playerChoice !== 'rock' ||  'scissors' || 'paper') {
+    console.error('You have to choose between rock, paper, or scissors as an input!');
+} 
 
 if (playerChoice === 'rock' && computerChoice === 'scissors') {
     console.log(
@@ -27,10 +30,11 @@ if (playerChoice === 'rock' && computerChoice === 'scissors') {
     return;
 }
 
-if (playerChoice === 'scissors' && computerChoice === 'scissors') {
-    console.log(`You both chose ${playerChoice}, its a draw!`);
-}
+// if (playerChoice === 'scissors' && computerChoice === 'scissors') {
+//     console.log(`You both chose ${playerChoice}, its a draw!`);
+// }
 
-if (playerChoice !== 'rock' ||  'scissors' || 'paper') {
-    console.error('You have to choose between rock, paper, or scissors as an input!');
-} 
+if (playerChoice === computerChoice ) {
+    console.log(`You both chose ${playerChoice}, its a draw!`);
+
+}
