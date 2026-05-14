@@ -12,15 +12,14 @@
 // Scissors beat Paper
 // Paper beats Rock 
 
-// only 'rock', 'paper' , or 'scissors' allowed as input from the player
-
-const playerChoice = process.argv.slice(2)[0];
-// const playerChoice = play[0];
-const computerChoice = 'scissors';
 
 let choices = ['rock', 'paper', 'scissors'];
 
-// if (playerChoice !== 'rock' && 'scissors' && 'paper') {
+const playerChoice = process.argv.slice(2)[0];
+// const playerChoice = play[0];
+
+const computerChoice = Math.floor(Math.random() * choices.length);
+
 
 if (!choices.includes(playerChoice)) {
     console.error('You have to choose between rock, paper, or scissors as an input!');
@@ -40,7 +39,4 @@ if (!choices.includes(playerChoice)) {
     return;
 };
 
-// if (playerChoice === 'scissors' && computerChoice === 'scissors') {
-//     console.log(`You both chose ${playerChoice}, its a draw!`);
-// }
 
