@@ -21,20 +21,23 @@ const computerChoice = 'scissors';
 // Console log is showing this error, even when the input is rock, paper, or scissors. But its also showing the right console.log further down...
 if (playerChoice !== 'rock' ||  'scissors' || 'paper') {
     console.error('You have to choose between rock, paper, or scissors as an input!');
-} 
-
-if (playerChoice === 'rock' && computerChoice === 'scissors') {
+} else if 
+    (playerChoice === 'rock' && computerChoice === 'scissors') {
     console.log(
         `You chose ${playerChoice}, and computer chose ${computerChoice}. You win!`
     );
+} else if  
+    (playerChoice === 'paper' && computerChoice === 'scissors') {
+    console.log(
+        `You chose ${playerChoice}, and computer chose ${computerChoice}. Computer wins, you loose! Sorry :(`
+    );
+} else if 
+    (playerChoice === computerChoice ) {
+    console.log(`You both chose ${playerChoice}, its a draw!`);
     return;
-}
+};
 
 // if (playerChoice === 'scissors' && computerChoice === 'scissors') {
 //     console.log(`You both chose ${playerChoice}, its a draw!`);
 // }
 
-if (playerChoice === computerChoice ) {
-    console.log(`You both chose ${playerChoice}, its a draw!`);
-
-}
