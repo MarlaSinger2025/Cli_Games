@@ -18,8 +18,13 @@ const playerChoice = process.argv.slice(2)[0];
 // const playerChoice = play[0];
 const computerChoice = 'scissors';
 
+let choices = ['rock', 'paper', 'scissors'];
+
 // Console log is showing this error, even when the input is rock, paper, or scissors. But its also showing the right console.log further down...
-if (playerChoice !== 'rock' ||  'scissors' || 'paper') {
+
+// if (playerChoice !== 'rock' && 'scissors' && 'paper') {
+
+if (playerChoice.includes(!choices)) {
     console.error('You have to choose between rock, paper, or scissors as an input!');
 } else if 
     (playerChoice === 'rock' && computerChoice === 'scissors') {
