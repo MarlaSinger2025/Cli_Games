@@ -20,11 +20,9 @@ const computerChoice = 'scissors';
 
 let choices = ['rock', 'paper', 'scissors'];
 
-// Console log is showing this error, even when the input is rock, paper, or scissors. But its also showing the right console.log further down...
-
 // if (playerChoice !== 'rock' && 'scissors' && 'paper') {
 
-if (playerChoice.includes(!choices)) {
+if (!choices.includes(playerChoice)) {
     console.error('You have to choose between rock, paper, or scissors as an input!');
 } else if 
     (playerChoice === 'rock' && computerChoice === 'scissors') {
