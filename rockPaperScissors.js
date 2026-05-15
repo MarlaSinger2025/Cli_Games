@@ -18,7 +18,8 @@ let choices = ['rock', 'paper', 'scissors'];
 const playerChoice = process.argv.slice(2)[0];
 // const playerChoice = play[0];
 
-const computerChoice = Math.floor(Math.random() * choices.length);
+const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+    console.log(computerChoice);
 
 
 if (!choices.includes(playerChoice)) {
