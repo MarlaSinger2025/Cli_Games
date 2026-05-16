@@ -1,13 +1,3 @@
-// Example :
-// const playerChoice = 'rock';
-// const computerChoice = 'paper';
-
-// if (playerChoice === 'rock' && computerChoice === 'paper') {
-// 	console.log(
-// 		`Player chose: ${playerChoice}, and computer chose ${computerChoice}. Computer wins!`
-// 	);
-// }
-
 // Rock beats Scissors
 // Scissors beat Paper
 // Paper beats Rock 
@@ -23,7 +13,7 @@ const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 if (!choices.includes(playerChoice)) {
     console.error('You have to choose between rock, paper, or scissors as an input!');
 
-} else if ( 
+} else if (  // Winning against Computer
     (playerChoice === 'rock' && computerChoice === 'scissors') ||
     (playerChoice === 'scissors' && computerChoice === 'paper') || 
     (playerChoice === 'paper' && computerChoice === 'rock')
@@ -32,7 +22,7 @@ if (!choices.includes(playerChoice)) {
         `You chose ${playerChoice}, and computer chose ${computerChoice}. You win!`
     );
 
-} else if  (
+} else if  ( // Loosing against Computer
     (playerChoice === 'paper' && computerChoice === 'scissors') ||
     (playerChoice === 'scissors' && computerChoice === 'rock') ||
     (playerChoice === 'rock' && computerChoice === 'paper')
