@@ -12,28 +12,28 @@
 
 let abc = [];
 let vowels = ['a', 'e', 'i', 'o', 'u'];
-let consonants = [''];
-let toVowel = 'way';
-
-// let choices = ['rock', 'paper', 'scissors'];
+let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
 
 const text = process.argv.slice(2)[0];
 
-// const translate = text.startsWith(vowels);
+const twoCons = text.slice(2) + text.slice(0, 2).concat('ay');
 
-// if (text.startsWith('Hello')) { //checks if text starts with a specific word (How can I add the vowels variable instead?). Case Sesitive
-//     console.log(text.concat(toVowel)), //adds variable to the end of the word
-//     console.log(text.substring(1)) // returns part of string from start index up to the end of the string if no end index is supplied.
-// };
+const ConsVow = text.slice(1) + text.slice(0, 1).concat('ay');
 
 if (vowels.includes(text[0].toLowerCase())) { // determines whether a given string may be found within this string
-    console.log(text.substring(1).concat(toVowel))
-};
+    console.log(text.concat('way')) //adds something at the end of the word
+} else if (
+    consonants.includes(text[0].toLowerCase()) &&
+    consonants.includes(text[1].toLowerCase())
+) {
+    console.log(twoCons)
+} else if (
+    consonants.includes(text[0].toLowerCase()) &&
+    vowels.includes(text[1].toLowerCase())
+) {
+    console.log(ConsVow)
+ };
 
-
-
-// const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-//     console.log(`Computer: ${computerChoice}`);
 
 // if (!choices.includes(playerChoice)) {
 //     console.error('You have to choose between rock, paper, or scissors as an input!');
