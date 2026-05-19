@@ -9,56 +9,24 @@
 //     If a word starts with a vowel add the word "way" at the end of the word.
 //         Example: Awesome = Awesome +way = Awesomeway
 
-
-let abc = [];
 let vowels = ['a', 'e', 'i', 'o', 'u'];
 let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
 
-const text = process.argv.slice(2)[0];
+const text = process.argv.slice(2); // transforms everything starting from index 2 into an array
 
-const twoCons = text.slice(2) + text.slice(0, 2).concat('ay');
 
-const ConsVow = text.slice(1) + text.slice(0, 1).concat('ay');
-
-if (vowels.includes(text[0].toLowerCase())) { // determines whether a given string may be found within this string
-    console.log(text.concat('way')) //adds something at the end of the word
+const translation = text.map(word => { //map () creates a new array populated with the results of calling a provided function on every element in the calling array
+    word = word.toLowerCase(); // converts everything to lowercase 
+    if (vowels.includes(word[0])) { // word[0] checking the first letter of the word
+    return word + 'way'
 } else if (
-    consonants.includes(text[0].toLowerCase()) &&
-    consonants.includes(text[1].toLowerCase())
-) {
-    console.log(twoCons)
+    consonants.includes(word[0]) &&
+    consonants.includes(word[1])) {
+        return word.slice(2) + word.slice(0, 2) + 'ay'
 } else if (
-    consonants.includes(text[0].toLowerCase()) &&
-    vowels.includes(text[1].toLowerCase())
-) {
-    console.log(ConsVow)
- };
+    consonants.includes(word[0]) &&
+    vowels.includes(word[1])) {
+        return word.slice(1) + word.slice(0, 1) + 'ay'
+}}).join(' ');
 
-
-// if (!choices.includes(playerChoice)) {
-//     console.error('You have to choose between rock, paper, or scissors as an input!');
-
-// } else if (  // Winning against Computer
-//     (playerChoice === 'rock' && computerChoice === 'scissors') ||
-//     (playerChoice === 'scissors' && computerChoice === 'paper') || 
-//     (playerChoice === 'paper' && computerChoice === 'rock')
-// ){
-//     console.log(
-//         `You chose ${playerChoice}, and computer chose ${computerChoice}. You win!`
-//     );
-
-// } else if  ( // Loosing against Computer
-//     (playerChoice === 'paper' && computerChoice === 'scissors') ||
-//     (playerChoice === 'scissors' && computerChoice === 'rock') ||
-//     (playerChoice === 'rock' && computerChoice === 'paper')
-// ) {
-//     console.log(
-//         `You chose ${playerChoice}, and computer chose ${computerChoice}. Computer wins, you loose! Sorry :(`
-//     );
-// } else if 
-//     (playerChoice === computerChoice ) {
-//     console.log(`You both chose ${playerChoice}, its a draw!`);
-//     return;
-// };
-
-
+console.log('Translation:', translation);
