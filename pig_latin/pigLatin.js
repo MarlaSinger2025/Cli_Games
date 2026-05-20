@@ -23,9 +23,7 @@ const translation = text.map(word => { //map () loops throuh every element (=wor
     consonants.includes(word[0]) &&
     consonants.includes(word[1])) {
         return word.slice(2) + word.slice(0, 2) + 'ay'
-} else if (
-    consonants.includes(word[0]) &&
-    vowels.includes(word[1])) {
+} else {
         return word.slice(1) + word.slice(0, 1) + 'ay'
 }}).join(' '); // turns (joins) array back into a string again
 
