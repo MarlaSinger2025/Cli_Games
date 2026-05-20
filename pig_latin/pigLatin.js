@@ -12,10 +12,10 @@
 let vowels = ['a', 'e', 'i', 'o', 'u'];
 let consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'];
 
-const text = process.argv.slice(2); // transforms everything starting from index 2 into an array
+const text = process.argv.slice(2); // returns an array of everything that was typed in the command line starting at index 2
 
 
-const translation = text.map(word => { //map () creates a new array populated with the results of calling a provided function on every element in the calling array
+const translation = text.map(word => { //map () loops throuh every element (=word) of the text array + passes it into the function
     word = word.toLowerCase(); // converts everything to lowercase 
     if (vowels.includes(word[0])) { // word[0] checking the first letter of the word
     return word + 'way'
@@ -27,6 +27,6 @@ const translation = text.map(word => { //map () creates a new array populated wi
     consonants.includes(word[0]) &&
     vowels.includes(word[1])) {
         return word.slice(1) + word.slice(0, 1) + 'ay'
-}}).join(' ');
+}}).join(' '); // turns (joins) array back into a string again
 
 console.log('Translation:', translation);
